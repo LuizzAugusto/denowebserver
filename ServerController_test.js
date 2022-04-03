@@ -1,11 +1,11 @@
 //@ts-check
 import { assertStrictEquals } from "./deps/for_tests/asserts.js"
 import { createFakeBrowser } from "./FakeBrowser.js"
-import { createRestServerController } from "./RestServerController.js"
+import { createServerController } from "./ServerController.js"
 
 Deno.test({ name: "RestServerController fetch index", fn: async function() {
   const port = 3007
-  const RestServerController = createRestServerController({ port })
+  const RestServerController = createServerController({ port })
   RestServerController.init()
   const fakeBrowser = createFakeBrowser({ port })
   const res = await fakeBrowser.requestIndex()
@@ -17,7 +17,7 @@ Deno.test({ name: "RestServerController fetch index", fn: async function() {
 
 Deno.test({ name: "RestServerController fetch js", fn: async function() {
   const port = 3007
-  const RestServerController = createRestServerController({ port })
+  const RestServerController = createServerController({ port })
   RestServerController.init()
   const fakeBrowser = createFakeBrowser({ port })
   const res = await fakeBrowser.requestJS("/script.js")
@@ -29,7 +29,7 @@ Deno.test({ name: "RestServerController fetch js", fn: async function() {
 
 Deno.test({ name: "RestServerController fetch css", fn: async function() {
   const port = 3007
-  const RestServerController = createRestServerController({ port })
+  const RestServerController = createServerController({ port })
   RestServerController.init()
   const fakeBrowser = createFakeBrowser({ port })
   const res = await fakeBrowser.requestCSS("/style.css")

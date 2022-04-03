@@ -7,7 +7,7 @@ const HOST = "localhost"
 const PORT = 3000
 const PUBLIC_FOLDER = "./public"
 
-export function createRestServerController({ host = HOST, port = PORT, publicFolder = PUBLIC_FOLDER } = {}) {
+export function createServerController({ host = HOST, port = PORT, publicFolder = PUBLIC_FOLDER } = {}) {
   /**
    * 
    * @type {Promise<void>|undefined}
