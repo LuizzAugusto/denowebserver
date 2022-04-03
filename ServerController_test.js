@@ -1,5 +1,5 @@
 //@ts-check
-import { assertStrictEquals } from "./deps/for_tests/asserts.js"
+import { assertStrictEquals } from "https://deno.land/std@0.130.0/testing/asserts.ts"
 import { createFakeBrowser } from "./FakeBrowser.js"
 import { createServerController } from "./ServerController.js"
 
